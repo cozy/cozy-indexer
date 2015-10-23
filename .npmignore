@@ -11,4 +11,5 @@ logs
 src
 test
 node_modules
+coffeelint.json
 search-indexes

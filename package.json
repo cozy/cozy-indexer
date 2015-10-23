@@ -1,7 +1,7 @@
 {
   "name": "cozy-indexer",
   "version": "0.0.1",
-  "description": "indexer package for the cozy-data-system",
+  "description": "Full text indexing library for cozy",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --bail --compilers coffee:coffee-script/register test/index.coffee",
@@ -10,7 +10,7 @@
     "lint": "npm run lint1 && npm run lint2",
     "lint1": "coffeelint -f coffeelint.json ./src/*.coffee",
     "lint2": "coffee-jshint -o node ./src/*.coffee",
-    "prepublish": "npm run build"
+    "prepublish": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,10 @@
     "indexer"
   ],
   "author": "Cozy",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cozy-labs/cozy-indexer2/issues"
+    "url": "https://github.com/cozy/cozy-indexer/issues"
   },
-  "homepage": "https://github.com/cozy-labs/cozy-indexer2",
+  "homepage": "https://github.com/cozy/cozy-indexer",
   "dependencies": {
     "async": "1.4.2",
     "natural": "0.2.1",
