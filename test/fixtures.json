@@ -1,0 +1,29 @@
+[
+    {
+        "_id":"fake_id_note_eng",
+        "docType": "Note",
+        "title": "Hello world",
+        "content": "This is an english note with some information.",
+        "tags": ["tagA", "tagged"]
+    },
+    {
+        "_id":"fake_id_note_fra",
+        "docType": "Note",
+        "title": "Bonne journée les français",
+        "content": "Ceci est une note en français. Il y a d'étranges accents.",
+        "tags": ["tagB", "tagged"]
+    },
+    {
+        "_id":"fake_id_note_fra2",
+        "docType": "Note",
+        "title": "Une autre note importante en français",
+        "content": "Qui parle de divers choses.",
+        "tags": ["tagC"]
+    },
+    {
+        "_id":"fake_id_file_fra",
+        "docType": "File",
+        "name": "Bonne journée",
+        "tags": ["tagB", "tagged"]
+    }
+]

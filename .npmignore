@@ -1,0 +1,14 @@
+*.csv
+*.dat
+*.gz
+*.log
+*.out
+*.pid
+*.seed
+*.swp
+lib-cov
+logs
+src
+test
+node_modules
+search-indexes
