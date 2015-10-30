@@ -1,3 +1,5 @@
+Math.log10 ?= (val) -> return Math.log(val) / Math.LN10
+
 SearchIndex = require 'search-index'
 franc = require 'franc'
 async = require 'async'
