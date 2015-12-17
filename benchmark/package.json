@@ -1,0 +1,16 @@
+{
+  "name": "indexer-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mass-add.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "JSONStream": "1.0.7",
+    "heapdump": "0.3.7",
+    "usage": "0.7.1"
+  }
+}

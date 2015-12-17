@@ -6,6 +6,10 @@
 *.pid
 *.seed
 *.swp
+benchmark/*.heapsnapshot
+benchmark/*.js
+benchmark/mails*.json
+benchmark/node_modules
 lib-cov
 logs
 lib

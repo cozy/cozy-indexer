@@ -13,3 +13,4 @@ test
 node_modules
 coffeelint.json
 search-indexes
+benchmark
