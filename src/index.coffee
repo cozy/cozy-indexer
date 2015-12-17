@@ -1,6 +1,6 @@
 Math.log10 ?= (val) -> return Math.log(val) / Math.LN10
 
-SearchIndex = require 'search-index'
+SearchIndex = require 'cozy-fork-search-index'
 franc = require 'franc'
 async = require 'async'
 path = require 'path'
