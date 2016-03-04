@@ -36,8 +36,8 @@ helpers =
     #
     # @param {string} text value to stem
     # @param {boolean} includeOriginal include the original text in output,
-    #                  allow to get matches even if content stemming was not done
-    #                  in the same language than query.
+    #                  allow to get matches even if content stemming was not
+    #                  done in the same language than query.
     #
     # @return {string} the stemmed text
     ###
