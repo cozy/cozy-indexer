@@ -220,7 +220,7 @@ module.exports = indexer =
     store:
         open: (callback) ->
             checkIfOpen = ->
-                return callback null if indexer.si.indexes.isOpen()
+                return callback null if indexer.si.options.indexes.isOpen()
                 setTimeout checkIfOpen, 100
             checkIfOpen()
         set: (key, value, callback) ->
