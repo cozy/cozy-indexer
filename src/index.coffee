@@ -329,7 +329,9 @@ module.exports = indexer =
             changed = true
             merged.weight = Math.max(olddef.weight, newdef.weight)
 
-        nGramLength = mergeNGramsLengths olddef.nGramLength, newdef.nGramLength
+        nGramLength = helpers.mergeNGramsLengths olddef.nGramLength, \
+                                                 newdef.nGramLength
+
         if nGramLength isnt olddef.nGramLength
             changed = true
             merged.nGramLength = nGramLength
