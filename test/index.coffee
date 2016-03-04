@@ -30,7 +30,9 @@ fileIndexDefinition =
 describe "Indexing API", ->
 
     before (done) ->
-        indexer.cleanup done
+        indexer.init (err) ->
+            console.log err if err
+            indexer.cleanup done
 
     it "When I add 3 note in english", (done) ->
         indexer.addBatch DOCS[0..2], noteIndexDefinition, done
