@@ -11,6 +11,7 @@ natural = require 'natural'
 SEPARATOR = ' '
 
 indexPath = process.env.INDEXES_PATH or '../search-indexes'
+indexPath = path.resolve __dirname, indexPath
 
 stemmers =
     en: require('natural/lib/natural/stemmers/porter_stemmer')
@@ -22,8 +23,8 @@ francOptions =
     minLength: 3
     whitelist: ['eng', 'fra']
 
-siOptions =
-    indexPath: path.resolve __dirname, indexPath
+siOptions = ->
+    indexPath: indexPath
     fieldsToStore: []
     stopwords: []
     separator: SEPARATOR
@@ -181,7 +182,8 @@ module.exports = indexer =
 
 
     init: (callback) ->
-        searchIndex siOptions, (err, si) ->
+        return callback null if indexer.si?.options?.indexes?.isOpen()
+        searchIndex siOptions(), (err, si) ->
             indexer.si = si
             callback err, si
 
@@ -218,11 +220,6 @@ module.exports = indexer =
     # sync is correct.
     ###
     store:
-        open: (callback) ->
-            checkIfOpen = ->
-                return callback null if indexer.si.options.indexes.isOpen()
-                setTimeout checkIfOpen, 100
-            checkIfOpen()
         set: (key, value, callback) ->
             indexer.si.options.indexes.put 'KV￮' + key + '￮', value, callback
         get: (key, callback) ->
@@ -277,18 +274,14 @@ module.exports = indexer =
     # @returns (callback) when the db is open again
     ###
     cleanup: (callback) ->
-        indexer.si.options.indexes.close (err) ->
+        indexer.si.close (err) ->
             return callback err if err
             exec "rm -rf #{indexPath}", (err) ->
                 return callback err if err
 
-                opts =
-                    indexPath: indexPath
-                    fieldsToStore: []
-                    stopwords: []
-                searchIndex opts, (err, si) ->
+                searchIndex siOptions(), (err, si) ->
                     indexer.si = si
-                    indexer.si.options.indexes.open callback
+                    callback err
 
 
     ###*
