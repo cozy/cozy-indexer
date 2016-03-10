@@ -43,7 +43,8 @@ helpers =
     # @return {string} the stemmed text
     ###
     stem: (text, includeOriginal = true) ->
-        lang = franc(text, francOptions).substring 0, 2
+        lang = "en"
+        includeOriginal = false
         if lang of stemmers
             out = stemmers[lang].tokenizeAndStem(text)
         else
