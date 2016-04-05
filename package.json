@@ -29,7 +29,7 @@
   "homepage": "https://github.com/cozy/cozy-indexer",
   "dependencies": {
     "async": "1.4.2",
-    "search-index": "0.7.6",
+    "search-index": "0.7.13",
     "franc": "1.1.1",
     "natural": "0.2.1"
   },
