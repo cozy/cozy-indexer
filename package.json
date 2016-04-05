@@ -1,6 +1,6 @@
 {
   "name": "cozy-indexer",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Full text indexing library for cozy",
   "main": "lib/index.js",
   "scripts": {
